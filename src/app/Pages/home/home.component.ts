@@ -9,22 +9,18 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
-  insurance: InsuranceProduct = {
-    productName: 'Sample Product',
-    category: 'Electronics',
-    description: 'This is a description of the product.',
-    basePremium: 199.99,
-  };
+  insuranceProducts: Array<InsuranceProduct> = [];
   constructor(
     private router: Router,
     private service: InsuranceProductsService
   ) {}
   ngOnInit(): void {
     this.service.apiInsuranceProductsGet().subscribe({
-      next(response) {
-        console.log(response);
+      next: (response) => {
+        response.forEach((res) => this.insuranceProducts.push(res));
       },
     });
+    console.log(this.insuranceProducts);
   }
   handleUpdate() {
     this.router.navigate(['/update']);
