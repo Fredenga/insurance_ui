@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../api';
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,27 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   Email: string = '';
   Password: string = '';
+  constructor(private router: Router, private authService: AuthService) {}
   onSubmit() {
-    if (this.Email && this.Password) {
-      console.log('Email:', this.Email);
-      console.log('Password:', this.Password);
-      // Here you can add the logic to authenticate the user
-    } else {
-      console.log('Form is invalid!');
+    try {
+      if (this.Email && this.Password) {
+        this.authService
+          .apiAuthLoginPost({
+            email: this.Email,
+            password: this.Password,
+          })
+          .subscribe({
+            next(response) {
+              console.log(response);
+            },
+          });
+
+        // this.router.navigate(['/home']);
+      } else {
+        throw Error('Form is invalid');
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 }

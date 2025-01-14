@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg" style="width: 25rem">
+    <div class="card-body">
+      <h5 class="card-title text-center">Create Form</h5>
+      <form (ngSubmit)="onSubmit()" #CreateForm="ngForm">
+        <div class="mb-3">
+          <label for="ProductName" class="form-label"
+            >Insurance Product Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="ProductName"
+            [(ngModel)]="productName"
+            name="ProductName"
+            required
+            email
+          />
+        </div>
+        <div class="mb-3">
+          <label for="Category" class="form-label">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Category"
+            [(ngModel)]="category"
+            name="Category"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="Description" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Description"
+            [(ngModel)]="description"
+            name="Description"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="BasePremium" class="form-label">Base Premium</label>
+          <input
+            type="text"
+            class="form-control"
+            id="BasePremium"
+            [(ngModel)]="basePremium"
+            name="BasePremium"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary w-100"
+          [disabled]="!CreateForm.form.valid"
+        >
+          Create
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

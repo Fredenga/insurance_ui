@@ -1,0 +1,6 @@
+.xcard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-box-shadow: -4px 9px 37px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -4px 9px 37px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: -4px 9px 37px 1px rgba(0, 0, 0, 0.75);
+}

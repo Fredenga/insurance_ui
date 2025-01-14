@@ -1,1 +1,24 @@
-<p>home works!</p>
+<app-navbar></app-navbar>
+<h2 class="text-center mt-2 text-primary">View Insurance Policies</h2>
+<div class="container align-items-center justify-content-center">
+  <button (click)="handleCreate()" class="btn btn-primary">Create New</button>
+</div>
+<div class="container my-4">
+  <div class="row">
+    <div class="card m-2" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ insurance.productName }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ insurance.category }}</h6>
+        <p class="card-text">{{ insurance.description }}</p>
+        <p class="card-text">
+          <strong>Base Premium: </strong
+          >{{ insurance.basePremium | currency : "USD" }}
+        </p>
+      </div>
+      <div class="card-footer d-flex justify-content-between">
+        <button (click)="handleUpdate()" class="btn btn-primary">Change</button>
+        <button (click)="handleDelete()" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
