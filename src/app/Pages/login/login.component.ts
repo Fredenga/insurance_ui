@@ -23,11 +23,14 @@ export class LoginComponent {
             next(response) {
               console.log(response);
             },
+            error() {
+              throw new Error('Error occured during login');
+            },
           });
 
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       } else {
-        throw Error('Form is invalid');
+        throw new Error('Form is invalid');
       }
     } catch (error) {
       console.log(error);
