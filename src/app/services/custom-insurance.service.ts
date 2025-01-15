@@ -26,4 +26,15 @@ export class CustomInsuranceService {
       { headers }
     );
   }
+
+  deleteInsuranceProduct(id: number, access_token: string) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${access_token}`,
+    });
+    console.log(access_token);
+    return this.httpClient.delete(
+      `http://localhost:5031/api/InsuranceProducts/${id}`,
+      { headers }
+    );
+  }
 }

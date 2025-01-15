@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CustomInsuranceService } from '../../services/custom-insurance.service';
 
@@ -13,7 +14,10 @@ export class CreateProductComponent implements OnInit {
   basePremium: number = 0;
   access_token: string | null = '';
 
-  constructor(private service: CustomInsuranceService) {}
+  constructor(
+    private service: CustomInsuranceService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     this.access_token = localStorage.getItem('access_token');
   }
