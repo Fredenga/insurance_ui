@@ -22,6 +22,7 @@ export class LoginComponent {
           .subscribe({
             next(response) {
               console.log(response);
+              localStorage.setItem('access_token', response);
             },
             error() {
               throw new Error('Error occured during login');
