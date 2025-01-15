@@ -1,3 +1,4 @@
+import { SearchComponent } from './Pages/search/search.component';
 import { CreateProductComponent } from './Pages/create-product/create-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateProductComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'search/:category',
+    component: SearchComponent,
     canActivate: [AuthGuard],
   },
 ];

@@ -19,12 +19,18 @@
   </button>
 
   <div class="container collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-lg-0 d-flex">
+    <form
+      (ngSubmit)="onSearch()"
+      class="form-inline my-2 my-lg-0 d-flex"
+      #SearchForm="ngForm"
+    >
       <input
         class="form-control mr-sm-2"
         type="search"
-        placeholder="Search"
+        placeholder="Search by category"
         aria-label="Search"
+        [(ngModel)]="searchCategory"
+        name="searchCategory"
       />
       <button class="btn btn-outline-white my-2 my-sm-0 mx-2" type="submit">
         Search

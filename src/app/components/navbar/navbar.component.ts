@@ -7,9 +7,17 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  searchCategory: string = '';
+
   constructor(private router: Router) {}
   logOut() {
     localStorage.removeItem('access_token');
     this.router.navigate(['/login']);
+  }
+  onSearch() {
+    console.log(this.searchCategory || 'hello world');
+    if (this.searchCategory.length > 0) {
+      this.router.navigate(['/search', this.searchCategory]);
+    }
   }
 }

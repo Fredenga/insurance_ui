@@ -1,3 +1,4 @@
+import { SearchComponent } from './Pages/search/search.component';
 import { CreateProductComponent } from './Pages/create-product/create-product.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateProductComponent,
     CreateProductComponent,
     NavbarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

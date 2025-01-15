@@ -1,0 +1,20 @@
+<app-navbar> </app-navbar>
+<div class="container my-4">
+  <div class="row">
+    <div
+      class="card my-2 mx-3"
+      style="width: 18rem"
+      *ngFor="let insurance of products"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ insurance.productName }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ insurance.category }}</h6>
+        <p class="card-text">{{ insurance.description }}</p>
+        <p class="card-text">
+          <strong>Base Premium: </strong
+          >{{ insurance.basePremium | currency : "USD" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
