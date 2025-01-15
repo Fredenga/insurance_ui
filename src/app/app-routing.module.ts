@@ -5,6 +5,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { UpdateProductComponent } from './Pages/update-product/update-product.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -27,10 +29,12 @@ const routes: Routes = [
   {
     path: 'update/:id',
     component: UpdateProductComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'create',
     component: CreateProductComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

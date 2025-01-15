@@ -1,3 +1,6 @@
 .bg-light-blue {
   background-color: #0791bb;
 }
+.pointer {
+  cursor: pointer;
+}
