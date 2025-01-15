@@ -25,7 +25,7 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'update',
+    path: 'update/:id',
     component: UpdateProductComponent,
   },
   {

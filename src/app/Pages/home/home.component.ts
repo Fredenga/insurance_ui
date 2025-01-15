@@ -25,8 +25,10 @@ export class HomeComponent implements OnInit {
       },
     });
   }
-  handleUpdate() {
-    this.router.navigate(['/update']);
+  handleUpdate(productId: number) {
+    if (productId > 0) {
+      this.router.navigate(['/update', productId]);
+    }
   }
   handleCreate() {
     this.router.navigate(['/create']);

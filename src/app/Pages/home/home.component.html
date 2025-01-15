@@ -24,7 +24,12 @@
         </p>
       </div>
       <div class="card-footer d-flex justify-content-between">
-        <button (click)="handleUpdate()" class="btn btn-primary">Change</button>
+        <button
+          (click)="handleUpdate(insurance.productId || 0)"
+          class="btn btn-primary"
+        >
+          Change
+        </button>
         <button
           (click)="handleDelete(insurance.productId || 0)"
           class="btn btn-danger"
