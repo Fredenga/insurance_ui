@@ -30,7 +30,8 @@ export class CreateProductComponent implements OnInit {
       this.basePremium > 0 &&
       this.access_token
     ) {
-      this.service
+      try {
+        this.service
         .createInsuranceProduct(this.access_token, {
           productName: this.productName,
           basePremium: this.basePremium,
@@ -42,6 +43,12 @@ export class CreateProductComponent implements OnInit {
             console.log(response);
           },
         });
+        this.router.navigate(['/home']);
+      } catch (error) {
+        console.log(error);
+        
+      }
+      
     }
   }
 }
